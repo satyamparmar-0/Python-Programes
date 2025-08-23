@@ -1,0 +1,6 @@
+
+# Ignore everything
+*
+!add num using function.py
+!.gitignore
+__pycache__/
