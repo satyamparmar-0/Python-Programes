@@ -2,5 +2,6 @@
 # Ignore everything
 *
 !add num using function.py
+!area and circumference of circle.py
 !.gitignore
 __pycache__/
