@@ -4,5 +4,6 @@
 !add num using function.py
 !area and circumference of circle.py
 !calculator in python.py
+!numpy module.py
 !.gitignore
 __pycache__/
