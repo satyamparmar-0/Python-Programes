@@ -9,5 +9,6 @@
 !pandas_module.py
 !List.py
 !Loops.py
+!Tuple.py
 !.gitignore
 __pycache__/
