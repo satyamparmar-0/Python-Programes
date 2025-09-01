@@ -10,5 +10,6 @@
 !List.py
 !Loops.py
 !Tuple.py
+!ExceptionHandling.py
 !.gitignore
 __pycache__/
