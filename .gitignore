@@ -11,5 +11,6 @@
 !Loops.py
 !Tuple.py
 !ExceptionHandling.py
+!string_operation.py
 !.gitignore
 __pycache__/
