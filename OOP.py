@@ -47,7 +47,7 @@ class Dog(Pets):
     @classmethod
     def bark(cls):
         print("dog is barking")
-        
+
 # example showing use of super()
 class Mammal(Dog):
     def __init__(self, name, legs, horns, has_fur=True):
@@ -61,3 +61,64 @@ mamal = Mammal("Lion", 4, 0)
 mamal.show()
 mamal.pets()
 mamal.bark()
+
+# polymorphism
+# polymorphism means many forms
+# method overloading means same method name with different parameters
+# method overriding means same method name in parent and child class
+# operator overloading means same operator with different data types
+# polymorphism with function
+
+def add(a,b):
+    return a+b
+print(add(5,6))
+print(add("satyam ","panwar"))
+print(add([1,2],[3,4]))
+print(add((1,2),(3,4)))
+print(add(5.5,6.5))
+print(add(5+6j,6+7j))
+print(add(True,False))
+
+print(add(b"hello ",b"world"))
+# polymorphism with class
+# example of polymorphism with class
+class Bird:
+    def intro(self):
+        print("all birds can fly")
+    def fly(self):
+        print("some bird can not fly")
+class Sparrow(Bird):
+    def fly(self):
+        print("sparrow can also fly")
+class Ostrich(Bird):
+    def fly(self):
+        print("ostrich can not fly")
+        
+bird=Bird()
+sparrow=Sparrow()
+ostrich=Ostrich()
+bird.intro()
+bird.fly()
+sparrow.intro()
+sparrow.fly()
+ostrich.intro()
+ostrich.fly()
+# polymorphism with class without inheritance
+class Bird:
+    def intro(self):
+        print("all birds can fly")
+    def fly(self):
+        print("some bird can not fly")
+
+class Sparrow:
+    def fly(self):
+        print("sparrow can also fly")
+class Ostrich:
+    def fly(self):
+        print("ostrich can not fly")
+bird=Bird()
+sparrow=Sparrow()
+ostrich=Ostrich()
+print(bird.intro(),bird.fly)
+print(sparrow.fly())
+print(ostrich.fly)
