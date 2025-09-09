@@ -1,5 +1,5 @@
 # the main concept of oop are class object inheritance polymorphism abstraction incapsulation
-#class is basic template for creating objects in python we use def keyword for class
+# class is basic template for creating objects in python we use def keyword for class
 # syntax class employee:
 # objects are run time entities
 # obj=myclass() is for creating objects
