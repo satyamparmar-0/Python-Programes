@@ -9,6 +9,23 @@ class Linkedlist():
     def __init__(self):
         self.head=None
     
+    # add a new node at the end of the linked list
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+    # add a new node at the start of the linked list
+    def prepend(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
     def printlist(self):
         temp=self.head
         while(temp):
