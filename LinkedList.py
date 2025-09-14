@@ -1,15 +1,14 @@
-# A simple linked list implementation in Python
-
 class Node:
-    def __init__(self,data):
-        self.data=data
-        self.next=None
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-class Linkedlist():
+
+class LinkedList:
     def __init__(self):
-        self.head=None
-    
-    # add a new node at the end of the linked list
+        self.head = None
+
+    # Append a node at the end
     def append(self, data):
         new_node = Node(data)
         if not self.head:
@@ -20,39 +19,65 @@ class Linkedlist():
             last = last.next
         last.next = new_node
 
-    # add a new node at the start of the linked list
+    # Prepend a node at the start
     def prepend(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
 
-    def printlist(self):
-        temp=self.head
-        while(temp):
-            print(temp.data)
-            temp=temp.next
+    # Delete a node by value
+    def delete_node(self, key):
+        temp = self.head
 
-llist=Linkedlist()
-llist.head=Node(1)
-second=Node(2)
-third=Node(3)
+        # If head needs to be deleted
+        if temp and temp.data == key:
+            self.head = temp.next
+            temp = None
+            return
 
-llist.head.next=second
-second.next=third
+        # Search for the node to delete
+        prev = None
+        while temp and temp.data != key:
+            prev = temp
+            temp = temp.next
 
-llist.printlist()
+        # Node not found
+        if temp is None:
+            print(f"Node with data {key} not found.")
+            return
 
-# This code defines a simple linked list with three nodes and prints their values.
-# A linked list is a linear data structure where each element is a separate object, with each element (node) containing a reference (link) to the next node in the sequence.
-# This allows for efficient insertions and deletions, as nodes can be easily added or removed without reorganizing the entire structure.
-# Linked lists are dynamic in size, meaning they can grow and shrink as needed, unlike arrays which have a fixed size.
-# Linked lists can be singly linked (where each node points to the next node) or doubly linked (where each node points to both the next and previous nodes).
-# Linked lists are commonly used in scenarios where frequent insertions and deletions are required, such as in implementing stacks, queues, and other dynamic data structures.
-# Linked lists are also used in various algorithms and applications, including memory management, graph representations, and more.
-# Linked lists can be traversed by following the links from one node to the next, starting from the head of the list.
-# Linked lists can be implemented in various programming languages, including Python, C, C++, and Java.
-# Linked lists can be used to implement adjacency lists in graph representations, where each vertex points to a linked list of its adjacent vertices.
-# Linked lists can be used to implement polynomial representations, where each term in the polynomial is represented
-# as a node in the linked list.
-# Linked lists can be used to implement navigation systems, where each location is represented as a node in the linked list.
-# Linked lists can be used to implement undo/redo functionality in applications, where each action is represented as a node in the linked list.
+        # Remove the node
+        prev.next = temp.next
+        temp = None
+
+    # Print the linked list
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+
+# Example Usage:
+llist = LinkedList()
+
+# Build the list
+llist.append(1)
+llist.append(2)
+llist.append(3)
+llist.prepend(0)
+llist.append(4)
+
+print("Original list:")
+llist.print_list()  # Output: 0 -> 1 -> 2 -> 3 -> 4 -> None
+
+# Delete a node
+llist.delete_node(2)
+print("\nList after deleting node with data 2:")
+llist.print_list()  # Output: 0 -> 1 -> 3 -> 4 -> None
+
+# Delete head
+llist.delete_node(0)
+print("\nList after deleting head (0):")
+llist.print_list()  # Output: 1 -> 3 -> 4 -> None
