@@ -122,3 +122,48 @@ ostrich=Ostrich()
 print(bird.intro(),bird.fly)
 print(sparrow.fly())
 print(ostrich.fly)
+
+# abstraction
+
+from abc import ABC,abstractmethod
+class shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+    def display(self):
+        print("this is shape class")
+class square(shape):
+    def __init__(self,side):
+        self.side=side
+    def area(self):
+        return self.side*self.side
+class rectangle(shape):
+    def __init__(self,length,breadth):
+        self.length=length
+        self.breadth=breadth
+    def area(self):
+        return self.length*self.breadth
+s=square(5)
+r=rectangle(4,6)
+print("area of square:",s.area())
+print("area of rectangle:",r.area())
+s.display()
+r.display()
+
+# encapsulation
+
+class computer:
+    def __init__(self):
+        self.__maxprice=900
+    def sell(self):
+        print(f"selling price is {self.__maxprice}")
+    def setprice(self,price):
+        self.__maxprice=price
+c=computer()
+c.sell()
+# change the price
+c.setprice(1000)
+c.sell()
+# private members are not accessible from outside the class
+#print(c.__maxprice) will give error
+# to access private members we use getter and setter methods
