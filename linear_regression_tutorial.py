@@ -105,15 +105,3 @@ plt.title('Linear Regression Result')
 plt.legend()
 plt.show()
 ```
-
-## 7. Instructions to Run
-1. Ensure you have Python installed on your system.
-2. Install necessary libraries:
-    ```bash
-    pip install numpy matplotlib scikit-learn
-    ```
-3. Copy and paste this code into a file named `linear_regression_tutorial.py`.
-4. Run the script:
-    ```bash
-    python linear_regression_tutorial.py
-    ```
